@@ -1,0 +1,26 @@
+## config.yaml
+training:
+  learning_rate: null  # Not specified in the paper
+  batch_size: null     # Not specified in the paper
+  epochs: null         # Not specified in the paper
+  optimizer: null      # Not specified in the paper
+
+dataset:
+  s2orc_path: "path/to/s2orc/dataset"  # Set the local path for the S2ORC dataset
+  s2ag_path: "path/to/s2ag/metadata"     # Set the local path for the S2AG metadata
+  sampling_threshold: 3  # Minimum percentage threshold for field filtering (3%)
+
+model:
+  type: "BM25"  # Options: BM25, NCN, LCR, Galactica. BM25 is used as the baseline in the paper.
+  hyperparameters: {}  # No specific hyperparameters provided in the paper for neural models
+
+evaluation:
+  recall_k: 10
+  mrr_k: 10
+
+logging:
+  level: "INFO"
+
+database:
+  mongodb_uri: "mongodb://localhost:27017"
+  database_name: "citation_benchmark"
